@@ -1,3 +1,5 @@
+package kasiski;
+
 import java.io.*;
 import java.security.SecureRandom;
 import java.util.Arrays;
@@ -6,25 +8,34 @@ import java.util.Scanner;
 public class SimplePermutation {
 
     int block_length;
-    String plaintext = "pt.txt";
-    String ciphertext = "ct.txt";
-    String encrypted = "encrypted.txt";
-    int[] key;
+    String input = "pt.txt";
+    String output = "ct.txt";
+    private int[] key;
+    boolean rewrite_output = true;
 
-    public SimplePermutation(int block_length) {
-        this.block_length = block_length;
-        generateKey(block_length);
+    public SimplePermutation() {
     }
 
-    public SimplePermutation(int block_length, String inputFile, String outputFile) {
-        this.block_length = block_length;
-        this.plaintext = inputFile;
-        this.ciphertext = outputFile;
-        generateKey(block_length);
+    public SimplePermutation(String inputFile, String outputFile) {
+        this.input = inputFile;
+        this.output = outputFile;
+    }
+
+    public int[] getKey() {
+        return key;
+    }
+
+    public void setKey(int[] key) {
+        this.block_length = key.length;
+        this.key = key;
     }
 
     public void encrypt() throws FileNotFoundException {
-        Scanner scan = new Scanner(new File(plaintext));
+        if (key == null) {
+            System.err.println("Error: The key wasn't generated");
+            return;
+        }
+        Scanner scan = new Scanner(new File(input));
         String pt = "", ct = "";
         while (scan.hasNext())
             pt += scan.nextLine();
@@ -46,15 +57,22 @@ public class SimplePermutation {
             for (int j = 0; j < block_length; j++)
                 ct += ctBlock[j];
         }
-        System.out.println("Encryption Succeed");
-        PrintWriter writer = new PrintWriter(ciphertext);
-        writer.write(ct);
+        System.out.println("Encryption Successfull");
+        PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(output, !rewrite_output)));
+        if (rewrite_output)
+            writer.write(ct);
+        else
+            writer.println("\n"+ct);
         writer.flush();
         writer.close();
     }
 
-    public void decrypt() throws FileNotFoundException {
-        Scanner scan = new Scanner(new File(ciphertext));
+    public void decrypt() throws FileNotFoundException, UnsupportedEncodingException {
+        if (key == null) {
+            System.err.println("Error: The key is null, enter key first");
+            return;
+        }
+        Scanner scan = new Scanner(new File(input));
         String ct = "", pt = "";
         while (scan.hasNext())
             ct += scan.nextLine();
@@ -76,14 +94,18 @@ public class SimplePermutation {
             for (int j = 0; j < block_length; j++)
                 pt += ptBlock[j];
         }
-        System.out.println("Decryption Succeed");
-        PrintWriter writer = new PrintWriter(encrypted);
-        writer.write(pt);
+        System.out.println("Decryption Successfull");
+        PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(output, !rewrite_output), "UTF-8"));
+        if (rewrite_output)
+            writer.write(pt);
+        else
+            writer.write("\n"+pt);
         writer.flush();
         writer.close();
     }
 
     public void generateKey(int block_length) {
+        this.block_length = block_length;
         key = new int[block_length];
         SecureRandom rand = new SecureRandom();
         int temp;
