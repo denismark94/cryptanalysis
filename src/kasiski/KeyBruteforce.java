@@ -1,7 +1,6 @@
 package kasiski;
 
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.Arrays;
 
 /**
@@ -11,12 +10,14 @@ public class KeyBruteforce {
     int keyLength = 0;
     String ctfile = "iofiles/ct.txt";
     String outfile = "iofiles/hacked.txt";
+    String gentdkeys = "iofiles/gkeys.txt";
     static int[] key;
 
-    public KeyBruteforce(int keyLength, String ctfile, String outfile) {
+    public KeyBruteforce(int keyLength, String ctfile, String outfile, String gkeysfile) {
         this.keyLength = keyLength;
         this.ctfile = ctfile;
         this.outfile = outfile;
+        this.gentdkeys = gkeysfile;
         key = new int[keyLength];
         for (int i = 0; i < keyLength; i++)
             key[i] = i;
@@ -24,11 +25,13 @@ public class KeyBruteforce {
 
     public void brute() throws FileNotFoundException, UnsupportedEncodingException {
         SimplePermutation decrypter = new SimplePermutation(ctfile,outfile);
+        PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(gentdkeys, false), "UTF-8"));
         int[]seq = new int[keyLength];
         Arrays.fill(seq,0);
         int[]res = sub(seq,key);
         int iterator = 1;
-        System.out.println("Key[" + iterator++ + "]: " + Arrays.toString(res));
+        writer.write("Key[" + iterator++ + "]: " + Arrays.toString(res)+"\n");
+        writer.flush();
         decrypter.setKey(res);
         decrypter.decrypt();
         decrypter.rewrite_output = false;
@@ -45,10 +48,12 @@ public class KeyBruteforce {
                 break;
             seq[ptr]++;
             res = sub(seq,key);
-            System.out.println("Key[" + iterator++ + "]: " + Arrays.toString(res));
+            writer.write("Key[" + iterator++ + "]: " + Arrays.toString(res)+"\n");
+            writer.flush();
             decrypter.setKey(res);
             decrypter.decrypt();
         }
+        writer.close();
     }
 
     public int[] sub(int[]seq, int[]key) {

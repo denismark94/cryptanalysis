@@ -31,10 +31,6 @@ public class SimplePermutation {
     }
 
     public void encrypt() throws FileNotFoundException {
-        if (key == null) {
-            System.err.println("Error: The key wasn't generated");
-            return;
-        }
         Scanner scan = new Scanner(new File(input));
         String pt = "", ct = "";
         while (scan.hasNext())
@@ -57,7 +53,6 @@ public class SimplePermutation {
             for (int j = 0; j < block_length; j++)
                 ct += ctBlock[j];
         }
-        System.out.println("Encryption Successfull");
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(output, !rewrite_output)));
         if (rewrite_output)
             writer.write(ct);
@@ -68,10 +63,7 @@ public class SimplePermutation {
     }
 
     public void decrypt() throws FileNotFoundException, UnsupportedEncodingException {
-        if (key == null) {
-            System.err.println("Error: The key is null, enter key first");
-            return;
-        }
+
         Scanner scan = new Scanner(new File(input));
         String ct = "", pt = "";
         while (scan.hasNext())
@@ -94,7 +86,6 @@ public class SimplePermutation {
             for (int j = 0; j < block_length; j++)
                 pt += ptBlock[j];
         }
-        System.out.println("Decryption Successfull");
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(output, !rewrite_output), "UTF-8"));
         if (rewrite_output)
             writer.write(pt);
