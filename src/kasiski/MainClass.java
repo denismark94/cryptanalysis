@@ -69,6 +69,7 @@ public class MainClass {
         System.out.println("Key : " + Arrays.toString(key));
         PrintWriter pw = new PrintWriter(new File(keyFile));
         pw.write(Arrays.toString(key));
+        pw.flush();
         pw.close();
         System.out.print("Key generation: sucess\n>");
     }

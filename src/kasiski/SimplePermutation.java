@@ -100,14 +100,31 @@ public class SimplePermutation {
         key = new int[block_length];
         SecureRandom rand = new SecureRandom();
         int temp;
-        for (int i = 0; i < block_length; i++) {
-            do {
-                temp = rand.nextInt(block_length) + 1;
-            } while (!isUnique(temp, key));
-            key[i] = temp;
-        }
+        do {
+            Arrays.fill(key,0);
+            for (int i = 0; i < block_length; i++) {
+                do {
+                    temp = rand.nextInt(block_length) + 1;
+                } while (!isUnique(temp, key));
+                key[i] = temp;
+            }
+        } while (!IsCorrect(key));
         for (int i = 0; i < key.length; i++)
             key[i]--;
+
+    }
+
+    public static boolean IsCorrect(int[] arr)//???????? ?? ???????????????
+    {
+        int first = arr[0];
+        int temp = first;
+        int i = 0;
+        while (i < arr.length && first!=arr[temp - 1])
+        {
+            i++;
+            temp = arr[temp - 1];
+        }
+        return i == arr.length - 1 && first == arr[temp - 1];
     }
 
     public char[] encryptBlock(int[] key, char[] ptBlock) {
