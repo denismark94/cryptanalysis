@@ -1,0 +1,6 @@
+Usage:
+gen <x_length> <y_length>
+alph <alph_file.txt>
+alph <a,b,c,d,e,..>
+ami <x> <y>
+ai <x> <y>
