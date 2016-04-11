@@ -9,13 +9,14 @@ import java.util.Scanner;
  * Created by Denis on 14.03.2016.
  */
 public class IndexCounter {
-    static Character[] alph = {'a', 'b', 'c'};
+    static char[] alph;
 
 public static void main(String[] args) throws FileNotFoundException {
     System.out.print(">");
     Scanner scan = new Scanner(System.in);
     String[] request = scan.nextLine().split(" ");
     StringGenerator generator = new StringGenerator("iofiles//alphabet.txt");
+    alph = generator.abc;
     String x = "",y = "";
     while(!request[0].equals("stop")) {
         switch (request[0]){
@@ -44,17 +45,29 @@ public static void main(String[] args) throws FileNotFoundException {
                     System.err.println("Generate strings or type manually first\n>");
                     break;
                 }
-                System.out.print("Average Match Index = " + getAvgMatchIndex(x, y) + "\n>");
-                System.out.print("Average Match Index = "+ );
+                System.out.println("Average Match Index = " + getAvgMatchIndex(x, y));
+                System.out.println(">");
+                break;
+            case "mi":
+                if (request.length != 1) {
+                    x = request[1];
+                    y = request[2];
+                    getAlph(x,y);
+                }
+                if (x == "") {
+                    System.err.println("Generate strings or type manually first\n>");
+                    break;
+                }
+                System.out.print("Match Index = " + getMatchIndex(x, y) + "\n>");
+                break;
         }
-
         request = scan.nextLine().split(" ");
     }
 
 }
-}
 
-    public static int getAvgMatchIndex(String x, String y) {
+    public static double getAvgMatchIndex(String x, String y) {
+        getAlph(x,y);
         String temp = "";
         double px, py, result = 0;
         for (int i = 0; i < alph.length; i++) {
@@ -64,10 +77,10 @@ public static void main(String[] args) throws FileNotFoundException {
             py = ((double) temp.split(alph[i] + "").length - 1) / (double) y.length();
             result += px * py;
         }
-        return (int) (result * 100);
+        return (result * 100);
     }
 
-    public static int getMatchIndex(String x, String y) {
+    public static double getMatchIndex(String x, String y) {
         if (x.length() != y.length()) {
             System.err.println("Length of strings must be equal");
             return -1;
@@ -76,7 +89,7 @@ public static void main(String[] args) throws FileNotFoundException {
         for (int i = 0; i < x.length(); i++)
             if (x.charAt(i) == y.charAt(i))
                 result++;
-        return (int) ((result / x.length()) * 100);
+        return  ((result / x.length()) * 100);
     }
 
     public static void getAlph(String x, String y) {
@@ -86,9 +99,9 @@ public static void main(String[] args) throws FileNotFoundException {
             if (!abc.contains(temp.charAt(i)))
                 abc.add(temp.charAt(i));
         }
-        alph = new Character[abc.size()];
-        abc.toArray(alph);
-        System.out.println(Arrays.toString(alph));
+        alph = new char[abc.size()];
+        for (int i = 0; i < abc.size(); i++)
+            alph[i] = abc.get(i);
     }
 
 

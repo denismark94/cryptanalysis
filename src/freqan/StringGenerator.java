@@ -10,8 +10,8 @@ import java.util.Scanner;
  * Created by markindi on 31.03.2016.
  */
 public class StringGenerator {
-    private static char[] abc = {};
 
+    public static char[] abc = {};
     public StringGenerator(char[] abc) {
         this.abc = abc;
     }
