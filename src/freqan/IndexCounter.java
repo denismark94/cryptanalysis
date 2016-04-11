@@ -1,70 +1,12 @@
 package freqan;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * Created by Denis on 14.03.2016.
  */
 public class IndexCounter {
     static char[] alph;
-
-public static void main(String[] args) throws FileNotFoundException {
-    System.out.print(">");
-    Scanner scan = new Scanner(System.in);
-    String[] request = scan.nextLine().split(" ");
-    StringGenerator generator = new StringGenerator("iofiles//alphabet.txt");
-    alph = generator.abc;
-    String x = "",y = "";
-    while(!request[0].equals("stop")) {
-        switch (request[0]){
-            case "gen":
-                int x_length = Integer.parseInt(request[1]);
-                int y_length = Integer.parseInt(request[2]);
-                x = generator.generate(x_length);
-                System.out.println("x: " + x);
-                y = generator.generate(y_length);
-                System.out.print("y: " + y + "\n>");
-                break;
-            case "alph":
-                if (request[1].contains(".txt"))
-                    generator=new StringGenerator(request[1]);
-                else
-                    generator = new StringGenerator(request[1].replaceAll(",","").toCharArray());
-                System.out.print(">");
-                break;
-            case "ami":
-                if (request.length != 1) {
-                    x = request[1];
-                    y = request[2];
-                    getAlph(x,y);
-                }
-                if (x == "") {
-                    System.err.println("Generate strings or type manually first\n>");
-                    break;
-                }
-                System.out.println("Average Match Index = " + getAvgMatchIndex(x, y));
-                System.out.println(">");
-                break;
-            case "mi":
-                if (request.length != 1) {
-                    x = request[1];
-                    y = request[2];
-                    getAlph(x,y);
-                }
-                if (x == "") {
-                    System.err.println("Generate strings or type manually first\n>");
-                    break;
-                }
-                System.out.print("Match Index = " + getMatchIndex(x, y) + "\n>");
-                break;
-        }
-        request = scan.nextLine().split(" ");
-    }
-
-}
 
     public static double getAvgMatchIndex(String x, String y) {
         getAlph(x,y);

@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97990102-2cc4-448a-8470-11c415e54089" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/iofiles/en_alph.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/iofiles/mixed_alph.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/iofiles/res_2.1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/iofiles/res_2.2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/iofiles/res_2.3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/iofiles/ru_alph.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/freqan/MainClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/freqan/Vigenere.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iofiles/alphabet.txt" afterPath="$PROJECT_DIR$/iofiles/alphabet.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iofiles/ct.txt" afterPath="$PROJECT_DIR$/iofiles/ct.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iofiles/help_indexes.txt" afterPath="$PROJECT_DIR$/iofiles/help_indexes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iofiles/key.txt" afterPath="$PROJECT_DIR$/iofiles/key.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iofiles/pt.txt" afterPath="$PROJECT_DIR$/iofiles/pt.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/freqan/IndexCounter.java" afterPath="$PROJECT_DIR$/src/freqan/IndexCounter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/freqan/StringGenerator.java" afterPath="$PROJECT_DIR$/src/freqan/StringGenerator.java" />
     </list>
     <ignored path="cryptanalysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pt.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexCounter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/freqan/IndexCounter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pt.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iofiles/pt.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -81,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vigenere.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Vigenere.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/freqan/Vigenere.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.3164557">
               <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -149,9 +145,9 @@
         <option value="$PROJECT_DIR$/iofiles/res_2.3.txt" />
         <option value="$PROJECT_DIR$/iofiles/help_indexes.txt" />
         <option value="$PROJECT_DIR$/iofiles/mixed_alph.txt" />
-        <option value="$PROJECT_DIR$/src/freqan/IndexCounter.java" />
         <option value="$PROJECT_DIR$/iofiles/pt.txt" />
         <option value="$PROJECT_DIR$/src/freqan/MainClass.java" />
+        <option value="$PROJECT_DIR$/src/freqan/IndexCounter.java" />
       </list>
     </option>
   </component>
@@ -244,20 +240,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="freqan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cryptanalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cryptanalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iofiles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -645,6 +627,13 @@
       <option name="number" value="Default" />
       <updated>1455799536364</updated>
     </task>
+    <task id="LOCAL-00001" summary="Match Index Counting">
+      <created>1460405191320</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1460405191320</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -722,7 +711,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Match Index Counting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Match Index Counting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1130,27 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/freqan/Vigenere.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#readFromFile#0;class#Vigenere#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/freqan/StringGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iofiles/res_2.1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1193,21 +1162,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/iofiles/pt.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/freqan/IndexCounter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7620253">
-          <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/freqan/StringGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iofiles/pt.txt">
+    <entry file="file://$PROJECT_DIR$/src/freqan/Vigenere.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="0.3164557">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#readFromFile#0;class#Vigenere#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
