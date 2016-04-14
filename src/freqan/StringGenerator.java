@@ -2,7 +2,6 @@ package freqan;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,9 +11,6 @@ import java.util.Scanner;
 public class StringGenerator {
 
     public static char[] abc = {};
-    public StringGenerator(char[] abc) {
-        this.abc = abc;
-    }
 
     public StringGenerator(String alphabetFile) throws FileNotFoundException {
         Scanner scan = new Scanner(new File(alphabetFile));

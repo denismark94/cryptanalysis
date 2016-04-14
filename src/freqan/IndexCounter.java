@@ -23,12 +23,9 @@ public class IndexCounter {
     }
 
     public static double getMatchIndex(String x, String y) {
-        if (x.length() != y.length()) {
-            System.err.println("Length of strings must be equal");
-            return -1;
-        }
+        int len = Math.min(x.length(),y.length());
         double result = 0;
-        for (int i = 0; i < x.length(); i++)
+        for (int i = 0; i < len; i++)
             if (x.charAt(i) == y.charAt(i))
                 result++;
         return  ((result / x.length()) * 100);
