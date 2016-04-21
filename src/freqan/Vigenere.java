@@ -39,7 +39,7 @@ public class Vigenere {
         return res;
     }
 
-    public void writeToFile(String path, String ct) throws FileNotFoundException {
+    public static void writeToFile(String path, String ct) throws FileNotFoundException {
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(path)));
         writer.write(ct);
         writer.flush();
