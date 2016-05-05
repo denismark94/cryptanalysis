@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class KeyBruteforce {
     int keyLength = 0;
     String ctfile = "iofiles/ct.txt";
-    String outfile = "iofiles/hacked.txt";
+    String outfile = "iofiles/output.txt";
     String gentdkeys = "iofiles/gkeys.txt";
     static int[] key;
 

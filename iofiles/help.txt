@@ -1,6 +1,0 @@
-Usage:
-gen_key <key_length> <output_file>
-crypt <key_file> <pt_file> <ct_file>
-decrypt <key_file> <ct_file> <output_file>
-kasiski <ct_file>
-brute <key_length> <ct_file> <output_file> <gen_keys_file>

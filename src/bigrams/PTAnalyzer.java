@@ -1,6 +1,6 @@
 package bigrams;
 
-import freqan.Vigenere;
+import indexes.Vigenere;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -13,11 +13,10 @@ public class PTAnalyzer {
     public String text;
 
     public PTAnalyzer(String ptFile) throws FileNotFoundException {
-        this.text = Vigenere.readFromFile(ptFile).toLowerCase();
-        for (int i = 0; i < text.length(); i++) {
-            if (!this.alph.contains(text.charAt(i) + ""))
-                if (Character.isLetter(text.charAt(i)))
-                    this.alph += text.charAt(i);
+        this.text = Vigenere.readFromFile(ptFile).toLowerCase().replaceAll("(\\.|\\,|\\!|\"|\\-|\\;|\\:|—|«|»|—|\\(|\\)|\\?)","");
+        for (int i = 0; i < this.text.length(); i++) {
+            if (!this.alph.contains(this.text.charAt(i) + ""))
+                    this.alph += this.text.charAt(i);
         }
     }
 

@@ -11,7 +11,7 @@ public class SimplePermutation {
     String input = "pt.txt";
     String output = "ct.txt";
     private int[] key;
-    boolean rewrite_output = true;
+    public boolean rewrite_output = true;
 
     public SimplePermutation() {
     }
@@ -30,11 +30,21 @@ public class SimplePermutation {
         this.key = key;
     }
 
+    public void setKey(Integer[] key) {
+        int[] copy = new int[key.length];
+        for (int i = 0; i < key.length; i++)
+            copy[i] = key[i];
+        this.block_length = key.length;
+        this.key = copy;
+    }
+
+
     public void encrypt() throws FileNotFoundException {
         Scanner scan = new Scanner(new File(input));
         String pt = "", ct = "";
         while (scan.hasNext())
             pt += scan.nextLine();
+        pt = pt.toLowerCase().replaceAll("(\\.|\\,|\\!|\"|\\-|\\;|\\:|—|«|»|—|\\(|\\)|\\?)","");
         char[] ptchars = pt.toCharArray();
         char[] ptBlock = new char[block_length];
         char[] ctBlock;

@@ -1,12 +1,10 @@
 package bigrams;
 
-import freqan.Vigenere;
+import indexes.Vigenere;
 
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by Denis on 21.04.2016.
@@ -20,7 +18,7 @@ public class FBChecker {
     }
 
     public boolean[][] getReferenceTable(int bufLength, String ctFile, String outFile) throws IOException {
-        String ct = Vigenere.readFromFile(ctFile);
+        String ct = Vigenere.readFromFile(ctFile).toLowerCase();
         boolean[][] res = new boolean[bufLength][bufLength];
         for (int i = 0; i < bufLength; i++)
             res[i][i] = true;
@@ -37,8 +35,6 @@ public class FBChecker {
                         break;
                     }
             }
-        for (int i = 0; i < res.length; i++)
-            System.out.println(Arrays.toString(res[i]));
 
         FileWriter fw = new FileWriter(outFile);
         String mask = "\\";
